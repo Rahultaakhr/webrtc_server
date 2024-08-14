@@ -1,14 +1,16 @@
 import { Server } from "socket.io"
 import dotenv from "dotenv"
 dotenv.config()
-const io = new Server(process.env.PORT, {
-    cors: { origin: "*" }
+const io = new Server(process.env.PORT || 3000, {
+    cors: { origin: 
+        "https://webrtc-client-xi.vercel.app/" 
+    }
 })
 
 const emailToSocket = new Map();
 const socketIdToEmail = new Map();
 io.on("connection", (socket) => {
-    console.log("socket connected", socket.id);
+    console.log("socket connected  ", socket.id);
 
     socket.on("room:join", ({ email, room }) => {
 
