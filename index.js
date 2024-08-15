@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 dotenv.config()
 const io = new Server(process.env.PORT || 3000, {
     cors: {
-        origin: "https://webrtc-client-xi.vercel.app/",  // Add your Vercel domain here
+        origin: "https://webrtc-client-xi.vercel.app",  // Add your Vercel domain here
         methods: ["GET", "POST"]
     }
 })
